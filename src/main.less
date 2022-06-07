@@ -1,0 +1,112 @@
+body {
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+}
+
+.title {
+  user-select: none;
+  width: 300px;
+  left: calc(50% - 150px);
+  top: calc(5vh - 15px);
+  // background-color: red;
+  position: absolute;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 600;
+
+  .top {
+    font-size: 14px;
+    margin-top: -18px;
+    margin-left: 10px;
+    border-radius: 4px;
+    padding: 2px;
+    background-color: rgb(221, 244, 255);
+    color: rgb(112, 174, 202);
+  }
+}
+
+.example {
+  max-width: 900px;
+  width: 100%;
+  background-color: white;
+  height: 80vh;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  // box-shadow: 3px 3px 15px rgb(185, 185, 185);
+  outline: 3px black solid;
+  // padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.TipBlock {
+  height: 100%;
+  @width-drag-area: 150px;
+
+  .ProseMirror {
+    height: 100%;
+    outline: none;
+    padding: 10px @width-drag-area;
+    position: relative;
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+      pointer-events: none;
+      content: "drag-area";
+      position: absolute;
+      width: @width-drag-area;
+      height: 100%;
+      top: 0;
+      background-color: rgba(235, 235, 235, 0.519);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(128, 128, 128, 0.182);
+    }
+
+    &::before {
+      left: 0;
+
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.controller {
+  min-height: 30px;
+  border-bottom: 3px solid black;
+  box-sizing: border-box;
+  display: flex;
+
+  .item {
+    user-select: none;
+    cursor: pointer;
+    color: rgb(59, 59, 59);
+    height: 24px;
+    width: 24px;
+    background-color: rgba(130, 130, 130, 0.338);
+    margin: 4px 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .5;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
